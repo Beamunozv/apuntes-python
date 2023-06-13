@@ -1,0 +1,60 @@
+from IPython.display import clear_output
+lista=[]
+mascota=[]
+#m=[]
+#m.append(Lista)
+print("Menu registro de mascotas\nELIJA UNA OPCION SEGUN EL NUMERO:\n1.Registrar Mascota\n2.Listar todos los registros\n3.Buscar Mascota\n4.Imprimir Reportes por tipo de mascota")
+while op:=10:
+  op=int(input("usted elige la opcion: "))
+  if op==1:
+    while True:
+      id_mascota=(input("ingrese una ID de 5 digitos numericos: "))
+      if len(id_mascota)>=5 and len(id_mascota)<=5:
+         print("ID de mascota registrada")
+         break
+      else:
+         print("ID de mascota no permitido")
+
+    nombre_mascota=(input("ingrese el nombre de su mascota: "))
+    print(f"el nombre de su mascota {nombre_mascota} fue registrado")
+
+    nombre_dueno=(input("ingrese su nombre "))
+    print(f"su nombre {nombre_dueno} fue registrado como el dueño")
+
+    tipo=int(input("su mascota es un perro o un gato?\n1=Gato\n2=Perro"))
+    if tipo==1:
+         print("su mascota fue registrada como Gato")
+         tipoM="gato"
+    if tipo==2:
+         print("su mascota fue registrada como Perro")
+         tipoM="perro"
+    lista=[id_mascota,nombre_mascota,nombre_dueno,tipoM]
+    mascota.append(lista)
+  if op==2:
+    clear_output()
+    for lista in mascota:
+      for dato in lista:
+          print(dato)
+      print("---------")
+  if op==3:
+    contador=0
+    buscar=(input("ingrese la ID de su mascota: "))
+    for lista in mascota:
+      if lista[0]==buscar:
+         contador=contador+1
+         print(lista[0])
+         print(lista[1])
+         print(lista[2])
+         print(lista[3])
+  if op==4:
+    buscar2=(input("ingrese el NUMERO del TIPO (1 O 2) de mascota: "))
+    for lista in mascota:
+      if lista[3]==buscar2:
+       if buscar2=="1":
+        tipoM="gato"
+        print(f"REPORTES\nID MASCOTA:{(lista[0])}\nNombre Mascota:{(lista[1])}\nTipo:{(lista[3])}\nNombre Dueño: Sr/a{(lista[2])}\nHay un total de {contador} mascotas en la lista")
+        False
+    else:
+     buscar2=="2"
+     print(f"REPORTES\nID MASCOTA:{(lista[0])}\nNombre Mascota:{(lista[1])}\nTipo:{(lista[3])}\nNombre Dueño: Sr/a{(lista[2])}\nHay un total de {contador} mascotas en la lista")
+     False
